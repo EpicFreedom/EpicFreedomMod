@@ -2,21 +2,28 @@ package me.StevenLawson.TotalFreedomMod;
 
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.DEVELOPERS;
+import static me.StevenLawson.TotalFreedomMod.TFM_Util.FOP_DEVELOPERS;
+import static me.StevenLawson.TotalFreedomMod.TFM_Util.SPECIAL_EXECS;
+import static me.StevenLawson.TotalFreedomMod.TFM_Util.SYS_ADMINS;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public enum TFM_PlayerRank
 {
-    DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[Dev]"),
-    IMPOSTOR("an " + ChatColor.YELLOW + ChatColor.UNDERLINE + "Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]"),
+    EF_DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[Dev]"),
+    SPEC_EXEC("a " + ChatColor.YELLOW + "Special Executive", ChatColor.YELLOW + "[Spec-Exec]"),
+    SYS_ADMIN("a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_RED + "[Sys-Admin]"),
+    FLAMING("the " + ChatColor.BLUE + "FOPM Creator", ChatColor.BLUE + "[EFM-Creator]"),
+    CL("the " + ChatColor.YELLOW + "Owner", ChatColor.BLUE + "[Founder]"),
+    IMPOSTOR("an " + ChatColor.GRAY + ChatColor.UNDERLINE + "Impostor", ChatColor.GRAY.toString() + ChatColor.UNDERLINE + "[IMP]"),
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
     SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[SA]"),
     TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
     SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
     OWNER("the " + ChatColor.BLUE + "Owner", ChatColor.BLUE + "[Owner]"),
-    CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
+    CONSOLE("the " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
     private String loginMessage;
     private String prefix;
 
@@ -64,12 +71,36 @@ public enum TFM_PlayerRank
         {
             return IMPOSTOR;
         }
-
-        if (DEVELOPERS.contains(sender.getName()))
+        if (sender.getName().equals("Flamingdragon23"))
+        {
+            return FLAMING;
+        }
+        
+        else if (sender.getName().equals("cldoesmc"))
+        {
+            return CL;
+        }
+        
+        else if (SYS_ADMINS.contains(sender.getName()))
+        {
+            return SYS_ADMIN;
+        }
+        
+        else if (SPECIAL_EXECS.contains(sender.getName()))
+        {
+            return SPEC_EXEC;
+        }
+        
+        else if (FOP_DEVELOPERS.contains(sender.getName()))
+        {
+            return FOP_DEVELOPER;
+        }
+        
+        else if (DEVELOPERS.contains(sender.getName()))
         {
             return DEVELOPER;
         }
-
+        
         final TFM_Admin entry = TFM_AdminList.getEntry((Player) sender);
 
         final TFM_PlayerRank rank;
@@ -80,7 +111,6 @@ public enum TFM_PlayerRank
             {
                 return OWNER;
             }
-
             if (entry.isSeniorAdmin())
             {
                 rank = SENIOR;
