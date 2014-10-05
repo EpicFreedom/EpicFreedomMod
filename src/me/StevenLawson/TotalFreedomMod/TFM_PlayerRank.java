@@ -16,6 +16,7 @@ public enum TFM_PlayerRank
     SYS_ADMIN("a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_RED + "[Sys-Admin]"),
     FLAMING("the " + ChatColor.BLUE + "FOPM Creator", ChatColor.BLUE + "[EFM-Creator]"),
     CL("the " + ChatColor.YELLOW + "Owner", ChatColor.BLUE + "[Founder]"),
+    CO_OWNER("the " + ChatColor.DARK_PURPLE + "Co-Owner", ChatColor.DARK_PURPLE + "[Co-Owner]")
     IMPOSTOR("an " + ChatColor.GRAY + ChatColor.UNDERLINE + "Impostor", ChatColor.GRAY.toString() + ChatColor.UNDERLINE + "[IMP]"),
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
