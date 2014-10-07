@@ -4,6 +4,7 @@ import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.IllegalFormatException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
@@ -395,7 +396,7 @@ public class TFM_PlayerListener implements Listener
                 continue;
             }
 
-            double fuckoffRange = fuckoff.getValue().doubleValue();
+            double fuckoffRange = fuckoff.getValue();
 
             Location playerLocation = player.getLocation();
             Location fuckoffLocation = fuckoffPlayer.getLocation();
@@ -632,7 +633,11 @@ public class TFM_PlayerListener implements Listener
                 event.setFormat("<" + playerdata.getTag().replaceAll("%", "%%") + " %1$s> %2$s");
             }
         }
-        catch (Exception ex)
+        catch (IllegalFormatException ex)
+        {
+            TFM_Log.severe(ex);
+        }
+        catch (NullPointerException ex)
         {
             TFM_Log.severe(ex);
         }
