@@ -20,7 +20,8 @@ public enum TFM_PlayerRank
     FLAMING("the " + ChatColor.BLUE + "EFM-Creator", ChatColor.BLUE + "[EFM-Creator]"),
     PANDA("the " + ChatColor.GOLD + "Head-Builder", ChatColor.GOLD + "[Head-Builder]"),
     CO_OWNER("the " + ChatColor.DARK_PURPLE + "Co-Owner", ChatColor.DARK_PURPLE + "[Co-Owner]"),
-    CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
+    CONSOLE("the " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
+    IMPOSTOR("a " + ChatColor.GREEN + ChatColor.BOLD + "Unnatural Dirt Block", ChatColor.GREEN.toString() + ChatColor.BOLD + "[DIRT]");
     private final String loginMessage;
     private final String prefix;
 
@@ -88,6 +89,11 @@ public enum TFM_PlayerRank
         else if (sender.getName().equals("Ice_TheBoss545"))
         {
             return CO_OWNER;
+        }
+        
+         else if (sender.getName().equals("Minecraf7pro"))
+        {
+            return DIRT;
         }
 
         final TFM_Admin entry = TFM_AdminList.getEntry((Player) sender);
