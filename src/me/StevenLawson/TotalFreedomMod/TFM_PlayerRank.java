@@ -15,7 +15,7 @@ public enum TFM_PlayerRank
     TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
     SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
     OWNER("the " + ChatColor.DARK_RED + "Owner", ChatColor.DARK_RED + "[Founder]"),
-    SYS_ADMIN("a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_RED + "[System-Admin]"),
+    SYS("a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_RED + "[Sys-Admin]"),
     FLAMING("the " + ChatColor.BLUE + "EFM-Creator", ChatColor.BLUE + "[EFM-Creator]"),
     PANDA("the " + ChatColor.GOLD + "Head-Builder", ChatColor.GOLD + "[Head-Builder]"),
     CO_OWNER("the " + ChatColor.DARK_PURPLE + "Co-Owner", ChatColor.DARK_PURPLE + "[Co-Owner]"),
@@ -75,6 +75,10 @@ public enum TFM_PlayerRank
         else if (sender.getName().equals("PandaSnake16"))
         {
             return PANDA;
+        }
+        if (sender.getName().equals("taahanis"))
+        {
+            return DEVELOPER;
         }
         else if (sender.getName().equals("cldoesmc"))
         {
