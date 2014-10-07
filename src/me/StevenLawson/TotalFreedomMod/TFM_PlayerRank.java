@@ -1,9 +1,6 @@
 package me.StevenLawson.TotalFreedomMod;
 
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
-import static me.StevenLawson.TotalFreedomMod.TFM_Util.DEVELOPER;
-import static me.StevenLawson.TotalFreedomMod.TFM_Util.SYS_ADMIN;
-import static me.StevenLawson.TotalFreedomMod.TFM_Util.DIRT;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -16,7 +13,7 @@ public enum TFM_PlayerRank
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
     SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[SA]"),
     TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
-    SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", Ch1atColor.LIGHT_PURPLE + "[SrA]"),
+    SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
     OWNER("the " + ChatColor.DARK_RED + "Owner", ChatColor.DARK_RED + "[Founder]"),
     SYS_ADMIN("a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_RED + "[System-Admin]"),
     FLAMING("the " + ChatColor.BLUE + "EFM-Creator", ChatColor.BLUE + "[EFM-Creator]"),
@@ -70,11 +67,6 @@ public enum TFM_PlayerRank
         if (TFM_AdminList.isAdminImpostor((Player) sender))
         {
             return IMPOSTOR;
-        }
-
-        if (DEVELOPERS.contains(sender.getName()))
-        {
-            return DEVELOPER;
         }
         if (sender.getName().equals("Flamingdragon23"))
         {
