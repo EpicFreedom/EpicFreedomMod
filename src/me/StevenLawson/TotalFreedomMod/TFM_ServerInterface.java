@@ -12,7 +12,7 @@ import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerLoginEvent.Result;
-
+// Change import net.minecraft.v1_7_R4.MinecraftServer and import net.minecraft.server.1_7_R4.PropertyManager to import net.minecraft.v1_7_R3.MinecraftServer and import net.minecraft.server.1_7_R3.PropertyManager if you are compiling with Spigot 1.8
 public class TFM_ServerInterface
 {
     public static final String COMPILE_NMS_VERSION = "v1_7_R4";
@@ -21,7 +21,8 @@ public class TFM_ServerInterface
     public static void setOnlineMode(boolean mode)
     {
         final PropertyManager manager = MinecraftServer.getServer().getPropertyManager();
-        manager.setProperty("online-mode", mode);
+        // change manager.a to manager.setProperty if you are compiling with Spigot 1.8
+        manager.a("online-mode", mode);
         manager.savePropertiesFile();
     }
 
