@@ -883,6 +883,10 @@ public class TFM_PlayerListener implements Listener
             name = ChatColor.AQUA + name;
             TFM_PlayerData.getPlayerData(player).setTag("&8[&BSuper Admin&8]");
         }
+        if (sender.getName().equals("taahanis"))
+        {
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&4Dev + Pheonix&8]");
+        }
 
         try
         {
