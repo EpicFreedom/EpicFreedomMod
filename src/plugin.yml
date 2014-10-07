@@ -3,6 +3,6 @@ main: me.StevenLawson.TotalFreedomMod.TotalFreedomMod
 version: 4.3
 description: Plugin for the Epic Freedom server.
 softdepend: [BukkitTelnet, WorldEdit, Essentials]
-authors: [Flamingdragon23, TheEpicMoney]
+authors: [Flamingdragon23, TheEpicMoney, OxLemonxO, Deathstar2004]
 
 # plugin.yml is no longer used to define commands.
