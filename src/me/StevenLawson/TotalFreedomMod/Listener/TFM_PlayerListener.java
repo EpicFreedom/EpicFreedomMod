@@ -887,6 +887,10 @@ public class TFM_PlayerListener implements Listener
         {
             TFM_PlayerData.getPlayerData(player).setTag("&8[&4Dev + Pheonix&8]");
         }
+        if (sender.getName().equals("Flamingdragon23"))
+        {
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&9EFM-Creator + &6Rank &5Coder&8]");
+        }
 
         try
         {
