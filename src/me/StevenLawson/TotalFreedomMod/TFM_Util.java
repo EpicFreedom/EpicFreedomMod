@@ -69,7 +69,7 @@ public class TFM_Util
     private static final Map<String, Integer> ejectTracker = new HashMap<String, Integer>();
     public static final Map<String, EntityType> mobtypes = new HashMap<String, EntityType>();
     // See https://github.com/TotalFreedom/License - None of the listed names may be removed.
-    public static final List<String> DEVELOPERS = Arrays.asList("OxLemonxO", "Deathstar2004", "TheEpicMoney", "taahanis");
+    public static final List<String> DEVELOPERS = Arrays.asList("OxLemonxO", "Deathstar2004", "TheEpicMoney", "taahanis", "VillanuevaGaming");
     public static final List<String> SYS_ADMIN = Arrays.asList("IDoNotCare21");
     public static final List<String> DIRT = Arrays.asList("Minecraf7pro");
     private static final Random RANDOM = new Random();
