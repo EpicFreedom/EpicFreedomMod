@@ -1,6 +1,7 @@
 package me.StevenLawson.TotalFreedomMod;
 
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
+import static me.StevenLawson.TotalFreedomMod.TFM_Util.DEVELOPERS;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -19,14 +20,8 @@ public enum TFM_PlayerRank
     FLAMING("the " + ChatColor.BLUE + "EFM-Creator", ChatColor.BLUE + "[EFM-Creator]"),
     PANDA("the " + ChatColor.GOLD + "Head-Builder", ChatColor.GOLD + "[Head-Builder]"),
     CO_OWNER("the " + ChatColor.DARK_PURPLE + "Co-Owner", ChatColor.DARK_PURPLE + "[Co-Owner]"),
-    CONSOLE("the " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
-    PHOENIX("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[Dev + Phoenix]"),
+    CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
     DIRT("a " + ChatColor.GREEN + ChatColor.BOLD + "Unnatural Dirt Block", ChatColor.GREEN.toString() + ChatColor.BOLD + "[DIRT]");
-
-    static Object fromSender(CommandSender sender)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     private final String loginMessage;
     private final String prefix;
 
@@ -74,6 +69,11 @@ public enum TFM_PlayerRank
         {
             return IMPOSTOR;
         }
+
+        if (DEVELOPERS.contains(sender.getName()))
+        {
+            return DEVELOPER;
+        }
         if (sender.getName().equals("Flamingdragon23"))
         {
             return FLAMING;
@@ -89,11 +89,6 @@ public enum TFM_PlayerRank
         else if (sender.getName().equals("Ice_TheBoss545"))
         {
             return CO_OWNER;
-        }
-        
-         else if (sender.getName().equals("Minecraf7pro"))
-        {
-            return DIRT;
         }
 
         final TFM_Admin entry = TFM_AdminList.getEntry((Player) sender);
