@@ -5,6 +5,7 @@ import com.sk89q.worldedit.LocalSession;
 import com.sk89q.worldedit.bukkit.BukkitPlayer;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.regions.Region;
+// if you are having problems with the import down below (import com.sk89q.worldedit.World;) compile http://github.com/TotalFreedom/WorldEdit and put it in lib.
 import com.sk89q.worldedit.world.World;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_Log;
