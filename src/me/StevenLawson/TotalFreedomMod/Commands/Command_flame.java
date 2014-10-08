@@ -2,14 +2,13 @@ package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
-import me.StevenLawson.TotalFreedomMod.TotalFreedomMod;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-@CommandPermissions(level = AdminLevel.ALL, source = SourceType.BOTH)
-@CommandParameters(description = "Flaming Management", usage = "/<command> <saadd | sadelete> <username>")
+@CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
+@CommandParameters(description = "Flame Administration Management", usage = "/<command> <add | delete> <username>")
 public class Command_flame extends TFM_Command
 {
 
@@ -17,18 +16,18 @@ public class Command_flame extends TFM_Command
     public boolean run(final CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
 
-        if (sender.getName().equals("Flamingdragon23"))
+        if (!TFM_Util.SYS_ADMIN.contains(sender.getName()) && !sender.getName().equals("Flamingdragon23") && !sender.getName().equals("VillanuevaGaming")  && !sender.getName().equals("OxLemonxO"))
         {
-            sender.sendMessage(TFM_Util.MSG_NO_PERMS);
-            TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use a Flamingdragon23 only command. Flamingdragon23 has been alerted.", true);
-            public static boolean Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), mail send Flamingdragon23 player.getName() has tried to use your command);
+            sender.sendMessage(TFM_Command.MSG_NO_PERMS);
+            TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use Flamingdragon23's command. Flamingdragon23 has been alerted.", true);
+
             if (!senderIsConsole)
             {
                 sender.setOp(false);
             }
             else
             {
-                sender.sendMessage("You are not Flamingdragon23 and may NOT use this command.");
+                sender.sendMessage("You are not Flamingdragon23 to use this command.");
             }
 
             return true;
@@ -45,7 +44,7 @@ public class Command_flame extends TFM_Command
 
         else if (args.length == 2)
         {
-            if (args[0].equalsIgnoreCase("saadd"))
+            if (args[0].equalsIgnoreCase("add"))
             {
                 Player player = null;
                 String playername = null;
@@ -65,7 +64,7 @@ public class Command_flame extends TFM_Command
                 return true;
             }
             
-            else if (args[0].equalsIgnoreCase("sadelete") || args[0].equalsIgnoreCase("del") || args[0].equalsIgnoreCase("remove"))
+            else if (args[0].equalsIgnoreCase("delete") || args[0].equalsIgnoreCase("del") || args[0].equalsIgnoreCase("remove"))
             {
 
                 String targetName = args[1];
