@@ -21,7 +21,7 @@ public class Command_flame extends TFM_Command
         {
             sender.sendMessage(TFM_Util.MSG_NO_PERMS);
             TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use a Flamingdragon23 only command. Flamingdragon23 has been alerted.", true);
-            Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), mail send Flamingdragon23 player.getName() has tried to use your command);
+            public static boolean Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), mail send Flamingdragon23 player.getName() has tried to use your command);
             if (!senderIsConsole)
             {
                 sender.setOp(false);
