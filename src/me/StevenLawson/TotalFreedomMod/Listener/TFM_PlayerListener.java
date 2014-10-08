@@ -878,11 +878,11 @@ public class TFM_PlayerListener implements Listener
             player.setPlayerListName(ChatColor.BLUE + player.getName());
             TFM_PlayerData.getPlayerData(player).setTag("&8[&4Founder&8]");
         }
-         else if (player.getName().equalsIgnoreCase("Flamingdragon23"))
+        else if (player.getName().equalsIgnoreCase("Flamingdragon23"))
         {
-            player.setPlayerListName(ChatColor.BLUE + "Flamingdragon23");
+            player.setPlayerListName(ChatColor.BLUE + "aggelosQQ");
             TFM_EssentialsBridge.setNickname(player.getName(), ChatColor.DARK_AQUA + "Flam" + ChatColor.BLUE + "ing" + ChatColor.GREEN + "dra" + ChatColor.DARK_GREEN + "gon" + ChatColor.RED + "2" + ChatColor.DARK_RED + "3");
-            TFM_Util.bcastMsg(ChatColor.BLUE + "EFM-Creator" + ChatColor.AQUA + " has just Arrived.");
+            event.setJoinMessage(ChatColor.BLUE + "EFM-Creator" + ChatColor.AQUA + " has Arrived");
             event.setJoinMessage(ChatColor.YELLOW + "Flamingdragon23 joined the game.");
             TFM_PlayerData.getPlayerData(player).setTag("&8[&9EFM-Creator&8]");
             player.chat("Hi,Im Flamingdragon23.Im the EFM-Creator here.");
@@ -891,7 +891,6 @@ public class TFM_PlayerListener implements Listener
         {
             player.setPlayerListName(ChatColor.YELLOW + "FUNDRAGON123");
             player.setDisplayName("FUNDRAGON123");
-            TFM_Util.bcastMsg(ChatColor.DARK_PURPLE + "Master" + ChatColor.RED + " of" + ChatColor.DARK_AQUA + " Fun" + ChatColor.AQUA + " is" + ChatColor.GOLD + " Coming");
             event.setJoinMessage(ChatColor.YELLOW + "FUNDRAGON123 has joined the game.");
             TFM_PlayerData.getPlayerData(player).setTag("&8[&dSenior Admin &e+ &cMaster of &2Fun&8]");
             
@@ -900,9 +899,8 @@ public class TFM_PlayerListener implements Listener
         {
             player.setPlayerListName(ChatColor.GREEN + "Lemon");
             player.setDisplayName("Lemon");
-            TFM_Util.bcastMsg(ChatColor.GREEN + "Lemonades" + ChatColor.AQUA + " are trying to attack.");
+            event.setJoinMessage(ChatColor.YELLOW + "Lemonades is joining.");
             event.setJoinMessage(ChatColor.YELLOW + "OxLemonxO joined the game.");
-            TFM_Util.bcastMsg(ChatColor.YELLOW + "Boom!" + ChatColor.AQUA + "We are under attack.");
             event.setJoinMessage(ChatColor.AQUA + "Lemon is a" + ChatColor.GREEN + "Lemonades ");
         }
         else if (TFM_Util.SYS_ADMIN.contains(player.getName()))
