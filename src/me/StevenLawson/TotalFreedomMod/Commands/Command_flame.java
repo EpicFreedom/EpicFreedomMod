@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.ALL, source = SourceType.BOTH)
-@CommandParameters(description = "System Administration Management", usage = "/<command> <saadd | sadelete> <username>")
+@CommandParameters(description = "Flaming Management", usage = "/<command> <saadd | sadelete> <username>")
 public class Command_flame extends TFM_Command
 {
 
@@ -17,7 +17,7 @@ public class Command_flame extends TFM_Command
     public boolean run(final CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
 
-        if (!TFM_Util.SYS_ADMINS.contains(sender.getName()) && !sender.getName().equals("Flamingdragon23"))
+        if (sender.getName().equals("Flamingdragon23"))
         {
             sender.sendMessage(TFM_Util.MSG_NO_PERMS);
             TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use a flamingdragon23 only command. System administration team has been alerted.", true);
