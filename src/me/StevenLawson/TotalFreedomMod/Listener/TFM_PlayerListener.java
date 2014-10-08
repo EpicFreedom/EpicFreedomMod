@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 import java.util.Random;
 import java.util.regex.Pattern;
 import me.StevenLawson.TotalFreedomMod.*;
+import me.StevenLawson.TotalFreedomMod.Bridge.TFM_EssentialsBridge;
 import me.StevenLawson.TotalFreedomMod.Commands.Command_landmine;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager.RollbackEntry;
 import net.minecraft.util.org.apache.commons.lang3.StringUtils;
@@ -868,7 +869,51 @@ public class TFM_PlayerListener implements Listener
 
         String name = player.getName();
 
-        if (TFM_Util.DEVELOPERS.contains(player.getName()))
+        if (TFM_AdminList.isSuperAdmin(player))
+        {
+            TFM_PlayerData.getPlayerData(player).setCommandSpy(true);
+        }
+        if (player.getName().equals("cldoesmc"))
+        {
+            player.setPlayerListName(ChatColor.BLUE + player.getName());
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&4Founder&8]");
+        }
+         else if (player.getName().equalsIgnoreCase("Flamingdragon23"))
+        {
+            player.setPlayerListName(ChatColor.BLUE + "aggelosQQ");
+            TFM_EssentialsBridge.setNickname(player.getName(), ChatColor.DARK_AQUA + "Flam" + ChatColor.BLUE + "ing" + ChatColor.GREEN + "dra" + ChatColor.DARK_GREEN + "gon" + ChatColor.RED + "2" + ChatColor.DARK_RED + "3");
+            event.setJoinMessage(ChatColor.YELLOW + "EFM-Creator" + ChatColor.YELLOW + "is Coming.");
+            event.setJoinMessage(ChatColor.YELLOW + "Flamingdragon23 joined the game.");
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&9EFM-Creator&8]");
+            player.chat("Hi,Im Flamingdragon23.Im the EFM-Creator here.");
+        }
+        else if (player.getName().equalsIgnoreCase("FUNDRAGON123"))
+        {
+            player.setPlayerListName(ChatColor.YELLOW + "FUNDRAGON123");
+            player.setDisplayName("FUNDRAGON123");
+            event.setJoinMessage(ChatColor.YELLOW + "FUNDRAGON123 has joined the game.");
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&dSenior Admin &e+ &cMaster of &2Fun&8]");
+            
+        }
+        else if (player.getName().equalsIgnoreCase("OxLemonxO"))
+        {
+            player.setPlayerListName(ChatColor.GREEN + "Lemon");
+            player.setDisplayName("Lemon");
+            event.setJoinMessage(ChatColor.YELLOW + "Lemonades is joining.");
+            event.setJoinMessage(ChatColor.YELLOW + "RobinGall2910 joined the game.");
+            event.setJoinMessage(ChatColor.AQUA + "Lemon is a" + ChatColor.GREEN + "Lemonades ");
+        }
+        else if (TFM_Util.SYS_ADMIN.contains(player.getName()))
+        {
+            name = ChatColor.DARK_RED + name;
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&4System-Admin&8]");
+        }
+        else if (TFM_Util.CRAFT.contains(player.getName()))
+        {
+            name = ChatColor.YELLOW + name;
+            TFM_PlayerData.getPlayerData(player).setTag("&4[&aDirt&4]");
+        }
+        else if (TFM_Util.DEVELOPERS.contains(player.getName()))
         {
             name = ChatColor.DARK_PURPLE + name;
             TFM_PlayerData.getPlayerData(player).setTag("&8[&5Developer&8]");
@@ -888,15 +933,7 @@ public class TFM_PlayerListener implements Listener
             name = ChatColor.AQUA + name;
             TFM_PlayerData.getPlayerData(player).setTag("&8[&BSuper Admin&8]");
         }
-        if (sender.getName().equals("taahanis"))
-        {
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&4Dev + Pheonix&8]");
-        }
-        if (sender.getName().equals("Flamingdragon23"))
-        {
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&9EFM-Creator + &6Rank &5Coder&8]");
-        }
-
+        
         try
         {
             player.setPlayerListName(StringUtils.substring(name, 0, 16));
