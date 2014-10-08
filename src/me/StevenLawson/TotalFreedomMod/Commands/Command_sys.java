@@ -20,7 +20,7 @@ public class Command_sys extends TFM_Command
 
         if (!TFM_Util.SYS_ADMIN.contains(sender.getName()) && !sender.getName().equals("cldoesmc") && !sender.getName().equals("Flamingdragon23")  && !sender.getName().equals("OxLemonxO") && !sender.getName().equals("IDoNotCare21") && !sender.getName().equals("taahanis"))
         {
-            sender.sendMessage(TFM_Util.MSG_NO_PERMS);
+            sender.sendMessage(TFM_Command.MSG_NO_PERMS);
             TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use a system admin only command. System administration team has been alerted.", true);
 
             if (!senderIsConsole)
