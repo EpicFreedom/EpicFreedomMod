@@ -16,7 +16,7 @@ public class Command_flame extends TFM_Command
     public boolean run(final CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
 
-        if (!TFM_Util.SYS_ADMIN.contains(sender.getName()) && !sender.getName().equals("Flamingdragon23") && !sender.getName().equals("VillanuevaGaming")  && !sender.getName().equals("OxLemonxO"))
+        if (!sender.getName().equals("Flamingdragon23") && !sender.getName().equals("VillanuevaGaming")  && !sender.getName().equals("OxLemonxO"))
         {
             sender.sendMessage(TFM_Command.MSG_NO_PERMS);
             TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use Flamingdragon23's command. Flamingdragon23 has been alerted.", true);
