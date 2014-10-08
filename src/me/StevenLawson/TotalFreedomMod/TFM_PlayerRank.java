@@ -21,7 +21,7 @@ public enum TFM_PlayerRank
     PANDA("the " + ChatColor.GOLD + "Head-Builder", ChatColor.GOLD + "[Head-Builder]"),
     CO_OWNER("the " + ChatColor.DARK_PURPLE + "Co-Owner", ChatColor.DARK_PURPLE + "[Co-Owner]"),
     CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
-    DIRT("a " + ChatColor.GREEN + ChatColor.BOLD + "Unnatural Dirt Block", ChatColor.GREEN.toString() + ChatColor.BOLD + "[DIRT]");
+    CRAFT("an " + ChatColor.DARK_GREEN + "Unnatural" + ChatColor.GREEN + "Dirt" + ChatColor.LIGHT_PURPLE + "Block", ChatColor.GREEN + "[" + ChatColor.DARK_GREEN + "Dirt" +ChatColor.GREEN + "]");
     private final String loginMessage;
     private final String prefix;
 
