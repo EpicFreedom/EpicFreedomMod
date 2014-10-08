@@ -20,7 +20,7 @@ public class Command_flame extends TFM_Command
         if (sender.getName().equals("Flamingdragon23"))
         {
             sender.sendMessage(TFM_Util.MSG_NO_PERMS);
-            TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use a Flamingdragon23 only command. System administration team has been alerted.", true);
+            TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use a Flamingdragon23 only command. Flamingdragon23 has been alerted.", true);
 
             if (!senderIsConsole)
             {
