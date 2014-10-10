@@ -44,7 +44,7 @@ public class Command_sys extends TFM_Command
 
         else if (args.length == 2)
         {
-            if (args[0].equalsIgnoreCase("saadd"))
+            if (args[0].equalsIgnoreCase("superadd"))
             {
                 Player player = null;
                 String playername = null;
@@ -64,7 +64,7 @@ public class Command_sys extends TFM_Command
                 return true;
             }
             
-            else if (args[0].equalsIgnoreCase("sadelete") || args[0].equalsIgnoreCase("del") || args[0].equalsIgnoreCase("remove"))
+            else if (args[0].equalsIgnoreCase("superdelete") || args[0].equalsIgnoreCase("del") || args[0].equalsIgnoreCase("remove"))
             {
 
                 String targetName = args[1];
