@@ -13,8 +13,6 @@ import java.lang.reflect.Field;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -69,9 +67,10 @@ public class TFM_Util
     private static final Map<String, Integer> ejectTracker = new HashMap<String, Integer>();
     public static final Map<String, EntityType> mobtypes = new HashMap<String, EntityType>();
     // See https://github.com/TotalFreedom/License - None of the listed names may be removed.
-    public static final List<String> DEVELOPERS = Arrays.asList("OxLemonxO", "Deathstar2004", "TheEpicMoney", "taahanis", "VillanuevaGaming");
+    public static final List<String> DEVELOPERS = Arrays.asList("OxLemonxO", "Deathstar2004", "taahanis", "VillanuevaGaming");
     public static final List<String> SYS_ADMIN = Arrays.asList("IDoNotCare21");
-    public static final List<String> DIRT = Arrays.asList("Minecraf7pro");
+    public static final List<String> FLAMING = Arrays.asList("Flamingdragon23");
+    public static final List<String> CRAFT = Arrays.asList("Minecraf7pro");
     private static final Random RANDOM = new Random();
     public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
     public static final Map<String, ChatColor> CHAT_COLOR_NAMES = new HashMap<String, ChatColor>();
@@ -648,7 +647,11 @@ public class TFM_Util
                 ois.close();
                 fis.close();
             }
-            catch (Exception ex)
+            catch (IOException ex)
+            {
+                TFM_Log.severe(ex);
+            }
+            catch (ClassNotFoundException ex)
             {
                 TFM_Log.severe(ex);
             }
@@ -673,7 +676,7 @@ public class TFM_Util
 
         if (flagValue != null)
         {
-            return flagValue.booleanValue();
+            return flagValue;
         }
         else
         {
