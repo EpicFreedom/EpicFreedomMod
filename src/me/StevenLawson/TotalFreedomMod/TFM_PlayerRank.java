@@ -21,6 +21,7 @@ public enum TFM_PlayerRank
     PANDA("the " + ChatColor.GOLD + "Head-Builder", ChatColor.GOLD + "[Head-Builder]"),
     CO_OWNER("the " + ChatColor.DARK_PURPLE + "Co-Owner", ChatColor.DARK_PURPLE + "[Co-Owner]"),
     CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
+    DDQ888("the " + ChatColor.BLUE + "Lead Forum Developer", ChatColor.BLUE + "[LFD]"),
     CRAFT("an " + ChatColor.DARK_GREEN + "Unnatural" + ChatColor.GREEN + "Dirt" + ChatColor.LIGHT_PURPLE + "Block", ChatColor.GREEN + "[" + ChatColor.DARK_GREEN + "Dirt" + ChatColor.GREEN + "]");
     private final String loginMessage;
     private final String prefix;
@@ -89,6 +90,10 @@ public enum TFM_PlayerRank
         else if (sender.getName().equals("TheEpicMoney"))
         {
             return CO_OWNER;
+        }
+        else if (sender.getName().equals("DDQ888"))
+        {
+            return DDQ888;
         }
 
         final TFM_Admin entry = TFM_AdminList.getEntry((Player) sender);
