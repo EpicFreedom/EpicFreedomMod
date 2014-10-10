@@ -86,7 +86,7 @@ public enum TFM_PlayerRank
         {
             return OWNER;
         }
-        else if (sender.getName().equals("Ice_TheBoss545"))
+        else if (sender.getName().equals("TheEpicMoney"))
         {
             return CO_OWNER;
         }
