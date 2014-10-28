@@ -67,9 +67,10 @@ public class TFM_Util
     private static final Map<String, Integer> ejectTracker = new HashMap<String, Integer>();
     public static final Map<String, EntityType> mobtypes = new HashMap<String, EntityType>();
     // See https://github.com/TotalFreedom/License - None of the listed names may be removed.
-    public static final List<String> DEVELOPERS = Arrays.asList("OxLemonxO", "Deathstar2004", "taahanis", "VillanuevaGaming");
+    public static final List<String> DEVELOPERS = Arrays.asList("OxLemonxO", "DarthSalamon", "VillanuevaGaming");
     public static final List<String> SYS_ADMIN = Arrays.asList("IDoNotCare21");
-    public static final List<String> FLAMING = Arrays.asList("Flamingdragon23");
+    public static final List<String> CO_OWNER = Arrays.asList("Flamingdragon23", "TheEpicMoney");
+    public static final List<String> Owner = Arrays.asList("cldoesmc");
     public static final List<String> CRAFT = Arrays.asList("Minecraf7pro");
     private static final Random RANDOM = new Random();
     public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
@@ -111,6 +112,21 @@ public class TFM_Util
         {
             CHAT_COLOR_NAMES.put(chatColor.name().toLowerCase().replace("_", ""), chatColor);
         }
+    }
+
+    public static void bcatMsg(CommandSender sender, String you_have_cleared_the_chat, ChatColor chatColor)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void bcastMsg(CommandSender sender, String string)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static String getUuid(Player player)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private TFM_Util()
@@ -920,6 +936,20 @@ public class TFM_Util
             if (TFM_AdminList.isSuperAdmin(player))
             {
                 player.sendMessage("[" + ChatColor.AQUA + "ADMIN" + ChatColor.WHITE + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.AQUA + message);
+            }
+        }
+    }
+    
+    public static void SeniorAdminChatMessage(CommandSender sender, String message, boolean senderIsConsole)
+    {
+        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
+        TFM_Log.info("[Senior Chat] " + name + ": " + message);
+
+        for (Player player : Bukkit.getOnlinePlayers())
+        {
+            if (TFM_AdminList.isSeniorAdmin(player))
+            {
+                player.sendMessage(ChatColor.YELLOW + "[" + ChatColor.LIGHT_PURPLE + "Senior " + ChatColor.DARK_PURPLE + "Chat" + ChatColor.YELLOW + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.YELLOW + message);
             }
         }
     }
