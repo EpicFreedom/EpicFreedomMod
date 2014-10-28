@@ -8,18 +8,18 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "System Administration Management", usage = "/<command> <saadd | sadelete> <username>")
-public class Command_sys extends TFM_Command
+@CommandParameters(description = "System Administration Management", usage = "/<command> <add | delete> <username>")
+public class Command_system extends TFM_Command
 {
 
     @Override
     public boolean run(final CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
 
-        if (!TFM_Util.SYS_ADMIN.contains(sender.getName()) && !sender.getName().equals("cldoesmc") && !sender.getName().equals("Flamingdragon23")  && !sender.getName().equals("OxLemonxO") && !sender.getName().equals("IDoNotCare21") && !sender.getName().equals("taahanis"))
+        if (!TFM_Util.SYS_ADMIN.contains(sender.getName()) && !sender.getName().equals("cldoesmc") && !sender.getName().equals("PandaSnake16")  && !sender.getName().equals("OxLemonxO") && !sender.getName ().equals ("TheEpicMoney") && !sender.getName ().equals ("IDoNotCare21") && !sender.getName ().equals ("FUNDRAGON123") && !sender.getName ().equals ("Flamingdragon23"))
         {
             sender.sendMessage(TFM_Command.MSG_NO_PERMS);
-            TFM_Util.adminAction("WARNING: " + sender.getName(), "Has attempted to use a system admin only command. System administration team has been alerted.", true);
+            TFM_Util.adminAction("SYS-ADMIN: " + sender.getName(), "Are reported of you trying to use there commands beware...", true);
 
             if (!senderIsConsole)
             {
@@ -27,7 +27,7 @@ public class Command_sys extends TFM_Command
             }
             else
             {
-                sender.sendMessage("You are not a System Admin and may NOT use this command. If you feel this in error please contact a Developer.");
+                sender.sendMessage("You are not a SYS-ADMIN to use this command.");
             }
 
             return true;
@@ -44,7 +44,7 @@ public class Command_sys extends TFM_Command
 
         else if (args.length == 2)
         {
-            if (args[0].equalsIgnoreCase("superadd"))
+            if (args[0].equalsIgnoreCase("add"))
             {
                 Player player = null;
                 String playername = null;
@@ -64,7 +64,7 @@ public class Command_sys extends TFM_Command
                 return true;
             }
             
-            else if (args[0].equalsIgnoreCase("superdelete") || args[0].equalsIgnoreCase("del") || args[0].equalsIgnoreCase("remove"))
+            else if (args[0].equalsIgnoreCase("delete") || args[0].equalsIgnoreCase("del") || args[0].equalsIgnoreCase("remove"))
             {
 
                 String targetName = args[1];
