@@ -14,7 +14,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "For the bad Superadmins", usage = "/<command> <playername>")
+@CommandParameters(description = "Flame them away!", usage = "/<command> <playername>")
 public class Command_flame extends TFM_Command
 {
     @Override
