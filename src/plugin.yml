@@ -1,8 +1,8 @@
 name: EpicFreedomMod
 main: me.StevenLawson.TotalFreedomMod.TotalFreedomMod
-version: 4.3
-description: Plugin for the Epic Freedom server.
+version: 5.3
+description: Plugin for the Triple Freedom server.
 softdepend: [BukkitTelnet, WorldEdit, Essentials]
-authors: [Flamingdragon23, TheEpicMoney, OxLemonxO, Deathstar2004]
+authors: [Madgeek1450, DarthSalamon, cldoesmc, Flamingdragon23]
 
 # plugin.yml is no longer used to define commands.
