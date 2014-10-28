@@ -12,17 +12,13 @@ public enum TFM_PlayerRank
     IMPOSTOR("an " + ChatColor.YELLOW + ChatColor.UNDERLINE + "Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]"),
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
-    SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[Super-Admin]"),
-    TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[Telnet-Admin]"),
-    SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[Senior-Admin]"),
-    OWNER("the " + ChatColor.DARK_RED + "Owner", ChatColor.DARK_RED + "[Founder]"),
-    SYS_ADMIN("a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_RED + "[System-Admin]"),
-    FLAMING("the " + ChatColor.BLUE + "EFM-Creator", ChatColor.BLUE + "[EFM-Creator]"),
-    PANDA("the " + ChatColor.GOLD + "Head-Builder", ChatColor.GOLD + "[Head-Builder]"),
+    SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[SA]"),
+    TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
+    SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
+    OWNER("the " + ChatColor.BLUE + "Owner", ChatColor.BLUE + "[Owner]"),
     CO_OWNER("the " + ChatColor.DARK_PURPLE + "Co-Owner", ChatColor.DARK_PURPLE + "[Co-Owner]"),
-    CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
-    DDQ888("the " + ChatColor.BLUE + "Lead Forum Developer", ChatColor.BLUE + "[LFD]"),
-    CRAFT("an " + ChatColor.DARK_GREEN + "Unnatural" + ChatColor.GREEN + "Dirt" + ChatColor.LIGHT_PURPLE + "Block", ChatColor.GREEN + "[" + ChatColor.DARK_GREEN + "Dirt" + ChatColor.GREEN + "]");
+    SYS_ADMIN("a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_RED + "[System-Admin"),
+    CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
     private final String loginMessage;
     private final String prefix;
 
@@ -75,25 +71,25 @@ public enum TFM_PlayerRank
         {
             return DEVELOPER;
         }
-        if (sender.getName().equals("Flamingdragon23"))
+        
+        else if (sender.getName().equals("IDoNotCare21"))
         {
-            return FLAMING;
+            return SYS_ADMIN;
         }
-        else if (sender.getName().equals("PandaSnake16"))
+        
+        else if (sender.getName().equals("FUNDRAGON123"))
         {
-            return PANDA;
+            return SYS_ADMIN;
         }
-        else if (sender.getName().equals("cldoesmc"))
-        {
-            return OWNER;
-        }
-        else if (sender.getName().equals("TheEpicMoney"))
+        
+        else if (sender.getName().equals("Flamingdragon23"))
         {
             return CO_OWNER;
         }
-        else if (sender.getName().equals("DDQ888"))
+        
+        else if (sender.getName().equals("TheEpicMoney"))
         {
-            return DDQ888;
+            return CO_OWNER;
         }
 
         final TFM_Admin entry = TFM_AdminList.getEntry((Player) sender);
