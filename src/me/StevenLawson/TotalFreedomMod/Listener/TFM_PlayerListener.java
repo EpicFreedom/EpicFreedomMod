@@ -1,7 +1,5 @@
 package me.StevenLawson.TotalFreedomMod.Listener;
 
-import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
-import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.IllegalFormatException;
@@ -13,7 +11,9 @@ import java.util.regex.Pattern;
 import me.StevenLawson.TotalFreedomMod.*;
 import me.StevenLawson.TotalFreedomMod.Bridge.TFM_EssentialsBridge;
 import me.StevenLawson.TotalFreedomMod.Commands.Command_landmine;
+import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager.RollbackEntry;
+import me.StevenLawson.TotalFreedomMod.World.TFM_AdminWorld;
 import net.minecraft.util.org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -873,83 +873,40 @@ public class TFM_PlayerListener implements Listener
         {
             TFM_PlayerData.getPlayerData(player).setCommandSpy(true);
         }
-        if (player.getName().equals("cldoesmc"))
+        if (player.getName().equals("Flamingdragon23"))
         {
             player.setPlayerListName(ChatColor.BLUE + player.getName());
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&9Owner&8]");
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&5Co-Owner&8]");
+        }
+        else if (player.getName().equals("IDoNotCare21"))
+        {
+            player.setPlayerListName(ChatColor.BLUE + player.getName());
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&4Lead System-Admin&8]");
         }
         else if (player.getName().equals("TheEpicMoney"))
         {
             player.setPlayerListName(ChatColor.BLUE + player.getName());
             TFM_PlayerData.getPlayerData(player).setTag("&8[&5Co-Owner&8]");
         }
-        else if (player.getName().equals("DDQ888"))
-        {
-            player.setPlayerListName(ChatColor.BLUE + player.getName());
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&9Lead Forum Developer&8]");
-        }
-        else if (player.getName().equalsIgnoreCase("Flamingdragon23"))
-        {
-            player.setPlayerListName(ChatColor.BLUE + "Flamingdragon23");
-            TFM_EssentialsBridge.setNickname(player.getName(), ChatColor.DARK_AQUA + "Flam" + ChatColor.BLUE + "ing" + ChatColor.GREEN + "dra" + ChatColor.DARK_GREEN + "gon" + ChatColor.RED + "2" + ChatColor.DARK_RED + "3");
-            event.setJoinMessage(ChatColor.BLUE + "EFM-Creator" + ChatColor.AQUA + " has Arrived");
-            event.setJoinMessage(ChatColor.YELLOW + "Flamingdragon23 joined the game.");
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&9EFM-Creator&8]");
-            player.chat("Hi,Im Flamingdragon23.Im the EFM-Creator here.");
-        }
-        else if (player.getName().equalsIgnoreCase("FUNDRAGON123"))
-        {
-            player.setPlayerListName(ChatColor.YELLOW + "FUNDRAGON123");
-            player.setDisplayName("FUNDRAGON123");
-            event.setJoinMessage(ChatColor.YELLOW + "FUNDRAGON123 has joined the game.");
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&dSenior Admin &e+ &cMaster of &2Fun&8]");
-            
-        }
-        else if (player.getName().equalsIgnoreCase("OxLemonxO"))
-        {
-            player.setPlayerListName(ChatColor.GREEN + "Lemon");
-            player.setDisplayName("Lemon");
-            event.setJoinMessage(ChatColor.YELLOW + "Lemonades is joining.");
-            event.setJoinMessage(ChatColor.YELLOW + "OxLemonxO joined the game.");
-            event.setJoinMessage(ChatColor.AQUA + "Lemon is a" + ChatColor.GREEN + "Lemonades ");
-        }
-        else if (TFM_Util.SYS_ADMIN.contains(player.getName()))
-        {
-            name = ChatColor.DARK_RED + name;
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&4System-Admin&8]");
-        }
-        else if (TFM_Util.CRAFT.contains(player.getName()))
-        {
-            name = ChatColor.YELLOW + name;
-            TFM_PlayerData.getPlayerData(player).setTag("&4[&aDirt&4]");
-        }
         else if (TFM_Util.DEVELOPERS.contains(player.getName()))
         {
-            name = ChatColor.DARK_PURPLE + name;
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&5Developer&8]");
+        player.setPlayerListName(ChatColor.DARK_PURPLE + player.getName());
+        TFM_PlayerData.getPlayerData(player).setTag("&8[&5Developer&8]");
         }
         else if (TFM_AdminList.isSeniorAdmin(player))
         {
-            name = ChatColor.LIGHT_PURPLE + name;
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&dSenior Admin&8]");
+      player.setPlayerListName(ChatColor.LIGHT_PURPLE + player.getName());
+      TFM_PlayerData.getPlayerData(player).setTag("&8[&dSenior Admin&8]");
         }
         else if (TFM_AdminList.isTelnetAdmin(player, true))
         {
-            name = ChatColor.DARK_GREEN + name;
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&2Telnet Admin&8]");
+      player.setPlayerListName(ChatColor.DARK_GREEN + player.getName());
+      TFM_PlayerData.getPlayerData(player).setTag("&8[&2Telnet Admin&8]");
         }
         else if (TFM_AdminList.isSuperAdmin(player))
         {
-            name = ChatColor.AQUA + name;
-            TFM_PlayerData.getPlayerData(player).setTag("&8[&BSuper Admin&8]");
-        }
-        
-        try
-        {
-            player.setPlayerListName(StringUtils.substring(name, 0, 16));
-        }
-        catch (IllegalArgumentException ex)
-        {
+      player.setPlayerListName(ChatColor.AQUA + player.getName());
+      TFM_PlayerData.getPlayerData(player).setTag("&8[&bSuper Admin&8]");
         }
     }
 }
