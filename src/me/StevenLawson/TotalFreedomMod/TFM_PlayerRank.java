@@ -73,11 +73,6 @@ public enum TFM_PlayerRank
             return DEVELOPER;
         }
         
-        else if (LFD.contains(sender.getName()))
-        {
-            return LFD;
-        }
-        
         else if (sender.getName().equals("IDoNotCare21"))
         {
             return SYS_ADMIN;
@@ -96,6 +91,16 @@ public enum TFM_PlayerRank
         else if (sender.getName().equals("TheEpicMoney"))
         {
             return CO_OWNER;
+        }
+        
+        else if (sender.getName().equals("mrlazerbird"))
+        {
+            return LFD;
+        }
+        
+        else if (sender.getName().equals("DDQ888"))
+        {
+            return LFD;
         }
 
         final TFM_Admin entry = TFM_AdminList.getEntry((Player) sender);
@@ -145,10 +150,5 @@ public enum TFM_PlayerRank
     public String getLoginMessage()
     {
         return loginMessage;
-    }
-
-    private boolean contains(String name)
-    {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
