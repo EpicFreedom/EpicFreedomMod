@@ -72,6 +72,7 @@ public class TFM_Util
     public static final List<String> CO_OWNER = Arrays.asList("Flamingdragon23", "TheEpicMoney");
     public static final List<String> Owner = Arrays.asList("cldoesmc");
     public static final List<String> CRAFT = Arrays.asList("Minecraf7pro");
+    public static final List<String> LFD = Arrays.asList("mrlazerbird", "DDQ888");
     private static final Random RANDOM = new Random();
     public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
     public static final Map<String, ChatColor> CHAT_COLOR_NAMES = new HashMap<String, ChatColor>();
