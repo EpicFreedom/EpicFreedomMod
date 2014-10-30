@@ -18,6 +18,7 @@ public enum TFM_PlayerRank
     OWNER("the " + ChatColor.BLUE + "Owner", ChatColor.BLUE + "[Owner]"),
     CO_OWNER("the " + ChatColor.DARK_PURPLE + "Co-Owner", ChatColor.DARK_PURPLE + "[Co-Owner]"),
     SYS_ADMIN("a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_RED + "[System-Admin"),
+    LFD("a " + ChatColor.BLUE + "Lead Forum Developer", ChatColor.BLUE + "[LFD]"),
     CONSOLE("The " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
     private final String loginMessage;
     private final String prefix;
@@ -70,6 +71,11 @@ public enum TFM_PlayerRank
         if (DEVELOPERS.contains(sender.getName()))
         {
             return DEVELOPER;
+        }
+        
+        else if (LFD.contains(sender.getName()))
+        {
+            return LFD;
         }
         
         else if (sender.getName().equals("IDoNotCare21"))
@@ -139,5 +145,10 @@ public enum TFM_PlayerRank
     public String getLoginMessage()
     {
         return loginMessage;
+    }
+
+    private boolean contains(String name)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
