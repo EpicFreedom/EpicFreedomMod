@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.UUID;
 import java.util.regex.Pattern;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
-import net.minecraft.server.v1_7_R3.MinecraftServer;
-import net.minecraft.server.v1_7_R3.PropertyManager;
+import net.minecraft.server.v1_7_R4.MinecraftServer;
+import net.minecraft.server.v1_7_R4.PropertyManager;
 import org.bukkit.ChatColor;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
@@ -22,7 +22,7 @@ public class TFM_ServerInterface
     {
         final PropertyManager manager = MinecraftServer.getServer().getPropertyManager();
         // change manager.a to manager.setProperty if you are compiling with Spigot 1.8
-        manager.a("online-mode", mode);
+        manager.setProperty("online-mode", mode);
         manager.savePropertiesFile();
     }
 
