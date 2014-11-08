@@ -5,6 +5,17 @@
 clean_threshold_hours: 168
 
 admins:
+  omarheshamelamin:
+    last_login_name: omarheshamelamin
+    is_activated: true
+    is_senior_admin: true
+    is_telnet_admin: true
+    ips:
+    - 62.163.103.161
+    console_aliases:
+    - Elmon11
+    last_login: Sat, 8 Nov 2014 08:08:48
+    custom_login_message: is a &dSenior Admin &r& &1Master &9OF &3SWAG
   b3c3b05a-a52d-33a6-a9c6-6e5063e00f0a:
     last_login_name: DarthSalamon
     is_activated: true
